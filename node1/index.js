@@ -1,3 +1,5 @@
+//进行JavaScript的一些特性练习
+
 var fs = require('fs');
 
 var files = ['a.txt', 'b.txt', 'c.txt'];
