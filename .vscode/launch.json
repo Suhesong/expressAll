@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "启动程序",
-            "program": "${workspaceFolder}/node1\\index.js",
+            "program": "${workspaceFolder}/node5\\A3.js",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
