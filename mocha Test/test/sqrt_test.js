@@ -1,6 +1,6 @@
 'use strict'
 let assert = require('assert');
-let sqrt=require('../sqrt');
+let {sqrt}=require('../sqrt');
 describe('#sqrt',()=>{
     it('sqrt(4) shoule equal 2',()=>{
         assert.equal(sqrt(4),2);

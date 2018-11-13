@@ -3,5 +3,6 @@ function test(){
     this.xxx='xxx';
     yyy=200;
 }
+test();
 var zzz='zzz';
-console.log(global.zzz);
+console.log(global.yyy);

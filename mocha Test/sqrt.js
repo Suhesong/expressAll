@@ -1,7 +1,7 @@
-module.exports.sqrt=function(x){
-    if(x>=0)
+module.exports={
+    sqrt:(x)=>{
         return Math.sqrt(x);
-    else throw new Error('x<0');
+    }
 }
 
 function check(x){
