@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+
+<body>
+    <div><table></table></div>
+    <button>change</button>
+    <script>
+        // var ajax=$.ajax({
+        //     url:'./a.json',
+        //     success:function(){
+        //         console.log('success1');
+        //         console.log('success2');
+        //         console.log('success3');
+        //     },
+        //     error:function(){
+        //         console.log('error');
+        //     }
+        // })
+
+        // var ajax = $.ajax('./a.json')
+        // ajax.done(function(){
+        //     console.log('success1')
+        // }).fail(function(){
+        //     console.log('fail1')
+        // })
+        // ajax.done(function(){
+        //     console.log('success2')
+        // }).fail(function(){
+        //     console.log('fail2')
+        // })
+        // ajax.done(function(){
+        //     console.log('success4')
+        // }).fail(function(){
+        //     console.log('fail3')
+        // })
+
+        // var ajax=$.ajax('./a.json')
+        // ajax.then(function(data){
+        //     console.log(data)
+        // },function(){
+        //     console.log('error')
+        // }).then(function(data){
+        //     console.log(data)
+        // },function(){
+        //     console.log('error')
+        // });
+
+        // function waitHandle(){
+        //     var dtd=$.Deferred();
+        //     var wait=function(dtd){
+        //         var task=function(){
+        //             console.log('执行完成');
+        //             dtd.resolve();
+        //         }
+        //         setTimeout(task,2000);
+        //         return dtd.promise();
+        //     }
+        //     return wait(dtd);
+        // }
+
+        // var ajax=waitHandle();
+        // ajax.then(
+        //     function(){
+        //         console.log('success1')
+        //     },function(){
+        //         console.log('error1')
+        //     }
+        // ).then(
+        //     function(){
+        //         console.log('success2')
+        //     },function(){
+        //         console.log('error2')
+        //     }
+        // ).then(
+        //     function(){
+        //         console.log('success3')
+        //     },function(){
+        //         console.log('error3')
+        //     }
+        // ).then(
+        //     function(){
+        //         console.log('success4')
+        //     },function(){
+        //         console.log('error4')
+        //     }
+        // )
+
+        var date = [{
+            'name': '张三',
+            'age': '20',
+            'address': '上海'
+        }, {
+            'name': '李四',
+            'age': '30',
+            'address': '北京'
+        }, {
+            'name': '张三',
+            'age': '25',
+            'address': '深圳'
+        }]
+
+        function render(data) {
+            var html = `<tr><td>姓名</td><td>年龄</td><td>地址</td></tr>`;
+            for (var i of date) {
+                html += `<tr><td>${i.name}</td><td>${i.age}</td><td>${i.address}</td></tr>`
+            }
+            $('table').html(html);
+        }
+        
+        render(date)
+        $('button').click(function () {
+            date[1].name='李留';
+            $('table').html('');
+            render(date);
+        })
+    </script>
+
+
+</body>
+
+</html>

@@ -1,3 +1,6 @@
+setImmediate(function(){
+    console.log('13');
+})
 console.log('1');
 
 setTimeout(function() {
@@ -11,12 +14,21 @@ setTimeout(function() {
     }).then(function() {
         console.log('5')
     })
+    setImmediate(function(){
+        console.log('14');
+    })
 })
 process.nextTick(function() {
     console.log('6');
+    setImmediate(function(){
+        console.log('15');
+    })
 })
 new Promise(function(resolve) {
     console.log('7');
+    setImmediate(function(){
+        console.log('16');
+    })
     resolve();
 }).then(function() {
     console.log('8')
@@ -34,4 +46,5 @@ setTimeout(function() {
         console.log('12')
     })
 })
+
 

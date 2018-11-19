@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='div'></div>
+    <script>
+        function loadImg(src){
+            const promise=new Promise(function(resolve,reject){
+                var img=document.createElement('img');
+                img.onload=function(){
+                    resolve(img);
+                }
+                img.onerror=function(){
+                    reject()
+                }
+                img.src=src;
+            })
+            return promise;
+        }
+
+
+
+
+        var src1="https://www.baidu.com/cache/icon/favicon.svg";
+        var src2="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542369950205&di=956a12105b62b3e0cd5b83b32a653447&imgtype=0&src=http%3A%2F%2Ff.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F6c224f4a20a446232cff99319522720e0cf3d7af.jpg";
+       
+       
+        var result1=loadImg(src1);
+        var result2=loadImg(src2)
+        
+        result1.then(function(img){
+            document.getElementById('div').appendChild(img);
+            return result2
+        }).then(function(img){
+            document.getElementById('div').appendChild(img);
+        }).catch(function(error){
+            console.log(error);
+        })
+        </script>
+</body>
+</html>
